@@ -1,570 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuel Adjetey Tetteh — Systems Administrator</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #0E1116;
-  --surface: #161B22;
-  --surface-2: #1C2330;
-  --border: #2D3748;
-  --text: #E6EDF3;
-  --muted: #8B949E;
-  --accent: #2D6A4F;
-  --accent-light: #40916C;
-  --accent-pale: #1A3A2A;
-  --gold: #B8860B;
-  --gold-light: #DAA520;
-  --white: #F0F6FC;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-/* NAV */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(14,17,22,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 56px;
-}
-.nav-name { font-size: 0.9rem; font-weight: 600; color: var(--white); letter-spacing: 0.01em; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; }
-.nav-links a {
-  color: var(--muted); text-decoration: none; font-size: 0.85rem;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--accent-light); }
-
-/* HERO */
-.hero {
-  min-height: 92vh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 5rem 2rem 4rem;
-  max-width: 860px; margin: 0 auto;
-}
-.hero-tag {
-  display: inline-block;
-  background: var(--accent-pale);
-  color: var(--accent-light);
-  font-size: 0.78rem; font-weight: 500;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  border: 1px solid var(--accent);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
-}
-.hero h1 {
-  font-family: 'Lora', Georgia, serif;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  font-weight: 600;
-  line-height: 1.18;
-  color: var(--white);
-  margin-bottom: 1.2rem;
-  max-width: 700px;
-}
-.hero-sub {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 560px;
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-.hero-mission {
-  background: var(--surface);
-  border-left: 3px solid var(--accent-light);
-  border-radius: 0 8px 8px 0;
-  padding: 1.1rem 1.4rem;
-  font-family: 'Lora', Georgia, serif;
-  font-style: italic;
-  font-size: 0.98rem;
-  color: var(--muted);
-  max-width: 600px;
-  margin-bottom: 2.5rem;
-}
-.hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn {
-  display: inline-block;
-  padding: 0.65rem 1.4rem;
-  border-radius: 6px;
-  font-size: 0.88rem; font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.btn-primary { background: var(--accent); color: var(--white); border: 1px solid var(--accent-light); }
-.btn-primary:hover { background: var(--accent-light); }
-.btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-.btn-ghost:hover { color: var(--white); border-color: var(--muted); }
-
-/* SECTIONS */
-section { padding: 5rem 2rem; border-top: 1px solid var(--border); }
-.container { max-width: 860px; margin: 0 auto; }
-.section-label {
-  font-size: 0.75rem; font-weight: 600;
-  color: var(--accent-light);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
-}
-.section-title {
-  font-family: 'Lora', Georgia, serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 2.5rem;
-}
-
-/* GOALS */
-.goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.2rem; }
-.goal-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.4rem;
-}
-.goal-num {
-  font-size: 0.75rem; font-weight: 600;
-  color: var(--accent-light);
-  margin-bottom: 0.5rem;
-}
-.goal-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
-
-/* SKILLS */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
-.skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; }
-.skill-group h4 { font-size: 0.82rem; font-weight: 600; color: var(--accent-light); margin-bottom: 0.6rem; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.tag {
-  background: var(--accent-pale);
-  color: var(--muted);
-  font-size: 0.75rem;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
-
-/* PROJECTS */
-.project-list { display: flex; flex-direction: column; gap: 1.2rem; }
-.project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: border-color 0.2s;
-}
-.project-card:hover { border-color: var(--accent-light); }
-.project-title { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
-.project-meta { font-size: 0.78rem; color: var(--accent-light); margin-bottom: 0.6rem; }
-.project-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
-
-/* EXPERIENCE */
-.exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
-.exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; }
-.exp-date { font-size: 0.8rem; color: var(--muted); padding-top: 0.1rem; }
-.exp-title { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
-.exp-org { font-size: 0.85rem; color: var(--accent-light); margin-bottom: 0.6rem; }
-.exp-body { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
-
-/* CERTS */
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
-.cert-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.2rem 1.4rem;
-  display: flex; flex-direction: column; gap: 0.3rem;
-}
-.cert-name { font-size: 0.9rem; font-weight: 600; color: var(--white); }
-.cert-org { font-size: 0.78rem; color: var(--muted); }
-.cert-status {
-  display: inline-block;
-  font-size: 0.72rem; font-weight: 500;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  margin-top: 0.3rem;
-  width: fit-content;
-}
-.status-done { background: #1A3A2A; color: #40916C; border: 1px solid #2D6A4F; }
-.status-progress { background: #2A2A1A; color: #DAA520; border: 1px solid #B8860B; }
-.status-prep { background: #1A1A2A; color: #7B8FCF; border: 1px solid #3D4F8F; }
-
-/* PRINCIPLES */
-.principles-list { display: flex; flex-direction: column; gap: 1.5rem; }
-.principle-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.5rem;
-}
-.principle-title { font-family: 'Lora', Georgia, serif; font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
-.principle-verse { font-family: 'Lora', Georgia, serif; font-style: italic; font-size: 0.88rem; color: var(--accent-light); margin-bottom: 0.6rem; }
-.principle-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-
-/* REFLECTION */
-.reflection-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 2rem;
-}
-.reflection-card p {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 0.98rem;
-  color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 1.2rem;
-}
-.reflection-card p:last-child { margin-bottom: 0; }
-
-/* CONTACT */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
-.contact-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.2rem;
-}
-.contact-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.3rem; }
-.contact-value { font-size: 0.9rem; color: var(--white); font-weight: 500; word-break: break-all; }
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2.5rem 2rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
-@media (max-width: 600px) {
-  .exp-item { grid-template-columns: 1fr; gap: 0.3rem; }
-  nav { padding: 0 1rem; }
-  .nav-links { gap: 1rem; }
-  section { padding: 3.5rem 1rem; }
-  .hero { padding: 4rem 1rem 3rem; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal portfolio exploring spiritual progression and professional growth.">
+  <title>Spiritual Progression &amp; Professional Growth</title>
+  <style>
+    :root {
+      --navy: #18324b;
+      --blue: #315b78;
+      --gold: #c69b53;
+      --cream: #f7f5f0;
+      --paper: #ffffff;
+      --ink: #263442;
+      --muted: #637282;
+      --line: #e4e8eb;
+      --shadow: 0 12px 34px rgba(24, 50, 75, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--cream); color: var(--ink);
+      font: 16px/1.75 Georgia, "Times New Roman", serif;
+    }
+    a { color: var(--blue); }
+    .topbar {
+      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line); backdrop-filter: blur(10px);
+    }
+    .nav {
+      max-width: 1120px; margin: auto; padding: 12px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .brand { color: var(--navy); font: 700 14px/1.3 Arial, sans-serif; letter-spacing: .04em; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 16px; }
+    .navlinks a {
+      color: var(--muted); text-decoration: none; font: 600 12px Arial, sans-serif;
+    }
+    .navlinks a:hover { color: var(--blue); }
+    .hero {
+      background: linear-gradient(130deg, #17334c, #315b78);
+      color: white; padding: 82px 22px 76px;
+    }
+    .hero-inner { max-width: 920px; margin: auto; }
+    .eyebrow {
+      color: #e5c58e; text-transform: uppercase; letter-spacing: .16em;
+      font: 700 11px Arial, sans-serif;
+    }
+    h1 {
+      max-width: 780px; margin: 18px 0; font: 400 clamp(36px, 6vw, 62px)/1.12 Georgia, serif;
+    }
+    .hero p { max-width: 690px; color: #e8eef3; font-size: 18px; }
+    .hero .button {
+      display: inline-block; margin-top: 18px; padding: 11px 18px;
+      border: 1px solid #e5c58e; border-radius: 3px; color: white;
+      text-decoration: none; font: 700 12px Arial, sans-serif;
+    }
+    main { max-width: 1000px; margin: 0 auto; padding: 48px 22px 80px; }
+    section { scroll-margin-top: 82px; margin: 0 0 34px; }
+    .panel {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 8px;
+      padding: clamp(22px, 4vw, 38px); box-shadow: var(--shadow);
+    }
+    .section-label {
+      color: var(--gold); text-transform: uppercase; letter-spacing: .14em;
+      font: 700 11px Arial, sans-serif;
+    }
+    h2 { color: var(--navy); font: 400 clamp(27px, 4vw, 36px)/1.2 Georgia, serif; margin: 8px 0 18px; }
+    h3 { color: var(--navy); font: 700 21px/1.35 Georgia, serif; margin: 0 0 12px; }
+    p { margin: 0 0 15px; }
+    .principle {
+      border-top: 1px solid var(--line); padding: 25px 0 8px; margin-top: 22px;
+    }
+    .principle:first-of-type { border-top: 0; padding-top: 5px; }
+    .scripture {
+      margin: 18px 0 6px; padding: 15px 18px; border-left: 3px solid var(--gold);
+      background: #faf8f3; color: #465564;
+    }
+    .scripture strong { color: var(--navy); }
+    .resource-list { display: grid; gap: 14px; }
+    .resource {
+      border: 1px solid var(--line); border-radius: 6px; padding: 17px 18px;
+      background: #fff;
+    }
+    .resource h3 { font-size: 18px; margin-bottom: 5px; }
+    .tag {
+      display: inline-block; margin: 5px 6px 5px 0; padding: 3px 8px;
+      border-radius: 20px; background: #eef3f6; color: #38566e;
+      font: 700 10px Arial, sans-serif;
+    }
+    .resource a { font: 600 13px Arial, sans-serif; text-decoration-thickness: 1px; }
+    .reflection-note {
+      background: #faf8f3; border: 1px solid #eee5d6; padding: 15px 18px;
+      border-radius: 5px; color: #5b6269; font-size: 14px;
+    }
+    footer {
+      text-align: center; padding: 28px 20px; color: var(--muted);
+      border-top: 1px solid var(--line); font: 12px/1.6 Arial, sans-serif;
+    }
+    @media (max-width: 650px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 10px 14px; }
+      .hero { padding: 58px 22px; }
+    }
+  </style>
 </head>
 <body>
-
-<nav>
-  <span class="nav-name">Samuel Adjetey Tetteh</span>
-  <ul class="nav-links">
-    <li><a href="#goals">Goals</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#principles">Principles</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <span class="hero-tag">Systems Administrator · Tema, Ghana</span>
-  <h1>Building systems that serve people, not just processes.</h1>
-  <p class="hero-sub">IT professional with hands-on experience in cloud administration, Linux systems, security monitoring, and network infrastructure. Currently completing a Bachelor of Applied Science in System Administration at Ensign College.</p>
-  <blockquote class="hero-mission">
-    "What is my purpose? How can I lift and strengthen those around me? How can I add value?" — Elder Kim B. Clark. These questions guide every system I build.
-  </blockquote>
-  <div class="hero-links">
-    <a href="#projects" class="btn btn-primary">View projects</a>
-    <a href="#contact" class="btn btn-ghost">Get in touch</a>
-  </div>
-</div>
-
-<!-- GOALS -->
-<section id="goals">
-  <div class="container">
-    <p class="section-label">IT 497 Capstone</p>
-    <h2 class="section-title">Goals for this course and beyond</h2>
-    <div class="goals-grid">
-      <div class="goal-card">
-        <div class="goal-num">Goal 1</div>
-        <p>Complete a professional portfolio documenting at least three technical competencies — cloud administration, Linux systems, and security monitoring — demonstrating readiness for a systems administrator role.</p>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">MY GROWTH PORTFOLIO</div>
+      <div class="navlinks">
+        <a href="#about">ABOUT</a>
+        <a href="#principles">PRINCIPLES</a>
+        <a href="#resources">RESOURCES</a>
+        <a href="#reflection">REFLECTION</a>
+        <a href="#commitment">COMMITMENT</a>
       </div>
-      <div class="goal-card">
-        <div class="goal-num">Goal 2</div>
-        <p>Produce a spiritual progression portfolio containing at least six reflections connecting course principles to growth as a disciple of Christ and a leader in the IT field.</p>
-      </div>
-      <div class="goal-card">
-        <div class="goal-num">Goal 3</div>
-        <p>Articulate a personal leadership philosophy grounded in disciple-leadership principles that can be presented confidently in any professional or Church setting by the end of this course.</p>
-      </div>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Faith • Learning • Service</div>
+      <h1>Spiritual Progression &amp; Professional Growth</h1>
+      <p>A personal space to reflect on the values that guide me, the lessons I am learning, and the kind of person and professional I hope to become.</p>
+      <a class="button" href="#principles">EXPLORE MY GUIDING PRINCIPLES</a>
     </div>
   </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <p class="section-label">Technical competencies</p>
-    <h2 class="section-title">Skills and tools</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Cloud platforms</h4>
-        <div class="skill-tags">
-          <span class="tag">Microsoft Azure</span>
-          <span class="tag">AWS EC2</span>
-          <span class="tag">AWS RDS</span>
-          <span class="tag">AWS S3</span>
-          <span class="tag">AWS WAF</span>
-          <span class="tag">IAM</span>
-          <span class="tag">Azure AD</span>
-          <span class="tag">RBAC</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Operating systems</h4>
-        <div class="skill-tags">
-          <span class="tag">Linux (Ubuntu, CentOS, Kali)</span>
-          <span class="tag">Windows Server</span>
-          <span class="tag">Windows Desktop</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Networking</h4>
-        <div class="skill-tags">
-          <span class="tag">TCP/IP</span>
-          <span class="tag">DNS</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">Cisco Packet Tracer</span>
-          <span class="tag">Wireshark</span>
-          <span class="tag">Nmap</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Security</h4>
-        <div class="skill-tags">
-          <span class="tag">Wazuh HIDS</span>
-          <span class="tag">SELinux</span>
-          <span class="tag">Access control</span>
-          <span class="tag">Packet filtering</span>
-          <span class="tag">Red/blue team</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Scripting and automation</h4>
-        <div class="skill-tags">
-          <span class="tag">Bash</span>
-          <span class="tag">PowerShell</span>
-          <span class="tag">IT automation</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Database and virtualization</h4>
-        <div class="skill-tags">
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">JetBrains DataGrip</span>
-          <span class="tag">VirtualBox</span>
-          <span class="tag">Proxmox</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <main>
+    <section id="about" class="panel">
+      <div class="section-label">A little about my journey</div>
+      <h2>Growing in faith and in my work</h2>
+      <p>As I continue my education and work toward my professional goals, I have come to understand that personal growth is about more than gaining knowledge, earning qualifications, or finding a good job. It is also about becoming a better person, strengthening my relationship with Heavenly Father, and learning how to use my abilities to help others.</p>
+      <p>My journey has not always followed a straight path. Moving from electrical maintenance into Information Technology has required me to learn new things, adjust to challenges, and remain committed to my goals. Through these experiences, I have learned the importance of patience, hard work, faith, and continuous learning.</p>
+      <p>As I develop this portfolio, I want to show how my spiritual beliefs and professional ambitions can work together. The three principles below are reminders of the direction I want my life to take.</p>
+    </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <p class="section-label">Applied work</p>
-    <h2 class="section-title">Projects</h2>
-    <div class="project-list">
+    <section id="principles" class="panel">
+      <div class="section-label">The foundation</div>
+      <h2>My three guiding principles</h2>
 
-      <div class="project-card">
-        <div class="project-title">Cloud architecture and infrastructure proposals</div>
-        <div class="project-meta">AWS EC2 · RDS · S3 · WAF · HAProxy · ZFS · SELinux</div>
-        <p>Designed and documented infrastructure proposals for four organizations. Built a Linux cloud file server on AWS EC2 with LVM storage partitioning and custom security hardening for PromisedLand.com. Developed an enterprise proposal for FamilySearch Heritage Vault 2.0 integrating load balancing, ZFS redundancy, and stateful packet filtering. Architected cloud solutions for SwiftMart Ghana and hybrid proposals for Lexicon IT Solutions and BitBeat Inc. using IaaS concepts and fault tolerance.</p>
+      <article class="principle">
+        <h3>1. Keeping Jesus Christ at the Center of My Life</h3>
+        <p>One of the most important things I want to remember as I move forward in life is to keep Jesus Christ at the center of everything I do. It is easy to become so focused on education, work, financial responsibilities, and future plans that I sometimes forget to make time for the things that matter most spiritually.</p>
+        <p>I want to develop the habit of turning to Heavenly Father for guidance, especially when making important decisions or facing difficult situations. I believe that having faith in Jesus Christ can help me remain strong, make better choices, and find peace even when things do not go as planned.</p>
+        <p>This principle also influences the kind of professional I want to become. As I continue developing my skills in Information Technology and System Administration, I want to remember that being successful is not just about technical knowledge. It is also about being honest, humble, dependable, and respectful toward others. I want people to know that they can trust me and rely on me to do what is right.</p>
+        <div class="scripture"><strong>Scripture: 3 Nephi 13:19–22.</strong> This passage reminds me to focus on what has lasting value instead of becoming too attached to temporary things. I understand it as a reminder to keep my priorities in the right order and make sure that my ambitions do not take the place of my relationship with God.</div>
+      </article>
+
+      <article class="principle">
+        <h3>2. Lifelong Learning, Personal Growth, and Diligence</h3>
+        <p>My second guiding principle is to never stop learning or working toward becoming a better version of myself. One thing life has taught me is that growth takes time. There will always be new things to learn, challenges to overcome, and opportunities to improve.</p>
+        <p>My educational journey has helped me appreciate this principle. Moving from electrical maintenance into Information Technology has pushed me outside my comfort zone. I have had to develop new knowledge, understand unfamiliar technologies, and become more confident in my abilities.</p>
+        <p>Through my studies at Ensign College and BYU-Pathway Worldwide, I have continued building my knowledge in technical support, networking, and system administration. These experiences have taught me that progress comes through consistency, patience, and a willingness to learn from mistakes.</p>
+        <p>I also believe that learning should not stop after graduation. Technology continues to change, and I will need to keep developing my skills throughout my career. More importantly, I want to continue learning spiritually and become someone who is willing to accept correction, grow through experience, and follow the direction of the Lord.</p>
+        <div class="scripture"><strong>Scripture: Doctrine and Covenants 58:27.</strong> This scripture encourages us to be actively involved in doing good rather than waiting for everything to happen on its own. It reminds me to take responsibility for my growth, make good use of my opportunities, and put effort into the goals I want to achieve.</div>
+      </article>
+
+      <article class="principle">
+        <h3>3. Serving Others Through Integrity, Resilience, and Christlike Love</h3>
+        <p>My third guiding principle is to use what I learn and the abilities I develop to make a positive difference in the lives of others.</p>
+        <p>I believe that life is not only about what I achieve for myself but also about how I treat people and the contributions I make. Whether at home, in the workplace, at school, or in the community, I want to be someone who is willing to help, listen, and treat others with kindness and respect.</p>
+        <p>This principle is especially important in my chosen career. Working in Information Technology involves more than maintaining computers, configuring networks, or managing systems. Behind every technical issue is a person or an organization depending on those systems to work properly.</p>
+        <p>As I prepare for a career in IT and System Administration, I want to approach my responsibilities with honesty, patience, and a willingness to help. I know that challenges and mistakes are part of professional life, but I want to learn from them instead of giving up. I also want to remain calm under pressure and treat colleagues and users with respect, even when situations become difficult.</p>
+        <p>My faith reminds me that serving others is one way of showing love for God. I want my professional knowledge to become a tool that allows me to help people and contribute positively wherever I work.</p>
+        <div class="scripture"><strong>Scripture: Mosiah 2:17.</strong> This scripture teaches that serving other people is also a way of serving God. It reminds me that even simple acts of kindness, support, and service can have lasting meaning.</div>
+      </article>
+    </section>
+
+    <section id="resources" class="panel">
+      <div class="section-label">Study and inspiration</div>
+      <h2>My initial collection of supporting materials</h2>
+      <p>These scriptures and Church resources give me ideas to study further and help me connect my guiding principles with teachings about discipleship, growth, and service.</p>
+      <div class="resource-list">
+        <article class="resource">
+          <h3>1. 3 Nephi 13:19–22</h3>
+          <span class="tag">Christ at the Center</span>
+          <p>This passage teaches me to focus on eternal priorities and not allow temporary achievements or possessions to become more important than my relationship with God.</p>
+          <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/13?lang=eng&amp;id=19-22#p19" target="_blank" rel="noopener">Read the scripture</a>
+        </article>
+        <article class="resource">
+          <h3>2. “Gather Together in One All Things in Christ” — Elder David A. Bednar</h3>
+          <span class="tag">All three principles</span>
+          <p>Elder Bednar's message and the analogy of intertwined strands help me think about how my faith, education, career, relationships, and responsibilities can strengthen one another when centered on Jesus Christ.</p>
+          <a href="https://www.churchofjesuschrist.org/study/general-conference/2018/10/gather-together-in-one-all-things-in-christ" target="_blank" rel="noopener">Read the General Conference talk</a>
+        </article>
+        <article class="resource">
+          <h3>3. Jesus Christ: The Prince of Peace</h3>
+          <span class="tag">Christ at the Center</span>
+          <p>This video reminds me that Jesus Christ can bring peace and comfort during difficult times. I want to remember that I do not have to face challenges without faith and spiritual guidance.</p>
+          <a href="https://youtu.be/5QHClYjiCF8" target="_blank" rel="noopener">Watch the video</a>
+        </article>
+        <article class="resource">
+          <h3>4. Blessings of the Temple</h3>
+          <span class="tag">Christ at the Center</span>
+          <p>This video encourages me to appreciate the temple and the blessings that come from making time for spiritual things, even when life becomes busy.</p>
+          <a href="https://youtu.be/3e8mbYvspqo" target="_blank" rel="noopener">Watch the video</a>
+        </article>
+        <article class="resource">
+          <h3>5. Don't Take the Temple for Granted</h3>
+          <span class="tag">Christ at the Center</span><span class="tag">Personal Growth</span>
+          <p>This video reminds me not to take spiritual opportunities and blessings for granted. It encourages me to be more intentional about my spiritual growth.</p>
+          <a href="https://youtu.be/zaD1FGeEsM4" target="_blank" rel="noopener">Watch the video</a>
+        </article>
+        <article class="resource">
+          <h3>6. Doctrine and Covenants 58:27</h3>
+          <span class="tag">Lifelong Learning</span>
+          <p>This scripture reminds me that personal growth requires action. I need to make consistent efforts and take responsibility for my progress.</p>
+          <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/58?lang=eng&amp;id=27#p27" target="_blank" rel="noopener">Read the scripture</a>
+        </article>
+        <article class="resource">
+          <h3>7. Mosiah 2:17</h3>
+          <span class="tag">Service and Christlike Love</span>
+          <p>This scripture reminds me that serving others is an important part of following Jesus Christ. It encourages me to look beyond my personal goals and consider how I can help others.</p>
+          <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&amp;id=17#p17" target="_blank" rel="noopener">Read the scripture</a>
+        </article>
       </div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-title">Security monitoring and network reconnaissance</div>
-        <div class="project-meta">Wazuh HIDS · Nmap · Kali Linux · VirtualBox · Proxmox · AWS EC2</div>
-        <p>Configured a Wazuh host intrusion detection system across Ubuntu Server and Windows Server virtual machines to analyze real-time event logs, file integrity, and authentication attempts. Executed active network reconnaissance across a /20 subnet in Kali Linux. Built and tested virtualized environments across VirtualBox, Proxmox, and AWS EC2 for system policy and access permission validation.</p>
-      </div>
+    <section id="reflection" class="panel">
+      <div class="section-label">Personal reflection</div>
+      <h2>Connecting spiritual progression with professional growth</h2>
+      <p>As I took time to reflect on my life and the direction I want to take, I thought about the experiences that have brought me to where I am today. I considered my education, work experiences, personal challenges, and the importance of keeping my faith strong while working toward my goals. One thing that stood out to me is that it is possible to become so focused on achieving something that we forget to appreciate the journey and the lessons we are learning along the way.</p>
+      <p>I also thought about the importance of making time for spiritual things, even when life becomes busy. Between education, work, and planning for the future, there are many responsibilities that compete for my attention. However, I want to be more intentional about my relationship with Heavenly Father and remember to seek His guidance in the decisions I make.</p>
+      <p>One message that particularly caught my attention was Elder David A. Bednar's analogy of the intertwined strands of a rope. It helped me understand that my spiritual and professional lives do not have to compete with each other. They can work together to make me stronger. My education can develop my knowledge, my work experiences can teach me responsibility, and my faith can help guide the way I use what I learn.</p>
+      <p>When I think about my transition from electrical maintenance into Information Technology, I recognize how much patience, effort, and willingness to learn have been required. There have been unfamiliar concepts and challenges, but each experience has provided an opportunity to grow. I want to carry these lessons into my future career, particularly as I develop in system administration and other areas of IT.</p>
+      <p>Professionally, I want to be more than someone who knows how to solve technical problems. I want to be someone who is dependable, honest, willing to help, and respectful toward others. I believe that the values I develop through my faith can make me a better colleague and a more responsible professional.</p>
+      <p>Overall, this reflection has reminded me that success is not only about earning qualifications or reaching career goals. It is also about the person I become along the way. Moving forward, I want to continue strengthening my faith, being committed to lifelong learning, and finding meaningful ways to serve others. My goal is to build a life in which my spiritual values and professional ambitions support one another, with Jesus Christ remaining at the center.</p>
+      <div class="reflection-note"><strong>Personalize this section before submitting:</strong> Add a few true details from the quiet reflection activity you complete, such as a thought from your scripture study, something you noticed about your priorities, or a feeling of peace. Do not include private or sacred details you do not wish to share.</div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-title">Advanced Linux administration — Heritage Vault 2.0</div>
-        <div class="project-meta">Linux · HAProxy · Keepalived · ZFS · SELinux · IT370</div>
-        <p>Acting as junior Linux administrator, proposed and documented a scalable, secure infrastructure for a genealogy platform business scenario. Structured the report around business objectives and mapped technical recommendations to each, producing a professional-grade deliverable that demonstrated IT advisory thinking.</p>
-      </div>
+    <section id="commitment" class="panel">
+      <div class="section-label">Looking ahead</div>
+      <h2>My commitment moving forward</h2>
+      <p>As I continue developing this portfolio, I want to use these three guiding principles as reminders of the direction I want my life to take.</p>
+      <p>I will strive to keep Jesus Christ at the center of my decisions, remain committed to learning and personal improvement, and use my abilities to serve others with honesty and compassion.</p>
+      <p>I know I still have much to learn, both spiritually and professionally. However, I believe that by staying focused, putting in consistent effort, and seeking the Lord's guidance, I can continue making progress and become the person I want to be.</p>
+    </section>
+  </main>
 
-      <div class="project-card">
-        <div class="project-title">Microsoft Azure administration</div>
-        <div class="project-meta">Azure · Virtual Networks · Azure AD · RBAC · AZ-104 · IT330</div>
-        <p>Completed hands-on labs aligned with the AZ-104 certification path, covering virtual network configuration, virtual machine deployment, Azure Active Directory identity management, and role-based access control using both the Azure Portal and Azure CLI.</p>
-      </div>
-
-      <div class="project-card">
-        <div class="project-title">Database analytics and networking labs</div>
-        <div class="project-meta">PostgreSQL · JetBrains DataGrip · Cisco Packet Tracer · Wireshark</div>
-        <p>Constructed entity-relationship diagrams and executed window functions, CTEs, and schema changes in PostgreSQL across the JFK Airport Logistics, Lahman Baseball, and Chinook Media Store datasets. Configured routing and switching topologies in Cisco Packet Tracer and captured live packet traffic with Wireshark for protocol analysis.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <p class="section-label">Professional background</p>
-    <h2 class="section-title">Work experience</h2>
-    <div class="exp-list">
-
-      <div class="exp-item">
-        <div class="exp-date">Internship</div>
-        <div>
-          <div class="exp-title">Technical Support Engineering Intern</div>
-          <div class="exp-org">Pasovent · Tema, Ghana</div>
-          <p class="exp-body">Provided first and second-line technical support for hardware, software, and network issues. Developed a personal ticket triage system that improved response efficiency across multiple concurrent client requests. Maintained systems documentation and assisted with network configurations under senior engineering supervision.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-date">2014 — Present</div>
-        <div>
-          <div class="exp-title">Area Electrical Maintenance Technician</div>
-          <div class="exp-org">Volta Aluminium Company Limited · Tema, Ghana</div>
-          <p class="exp-body">Over a decade of maintaining safety-critical electrical systems in a major aluminium production facility. Performed preventive maintenance, diagnosed and resolved machine faults, interpreted electrical blueprints, and adhered to KPIs focused on equipment uptime. This role developed the systematic troubleshooting discipline and accountability under pressure that underpins all technical work since.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <p class="section-label">Academic credentials</p>
-    <h2 class="section-title">Education and certifications</h2>
-
-    <div class="exp-list" style="margin-bottom:2.5rem;">
-      <div class="exp-item">
-        <div class="exp-date">Oct 2025 — Jul 2027</div>
-        <div>
-          <div class="exp-title">Bachelor of Applied Science in Information Technology, System Administration</div>
-          <div class="exp-org">Ensign College · GPA 3.360</div>
-          <p class="exp-body">Builds on the associate degree with system design, Azure and AWS cloud platforms, cybersecurity, scripting and automation, and IT service management. Structured around three stackable certificates.</p>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-date">Jan 2025 — May 2026</div>
-        <div>
-          <div class="exp-title">Associate of Applied Science in Information Technology</div>
-          <div class="exp-org">Ensign College · GPA 3.360</div>
-          <p class="exp-body">Covered Windows and Linux administration, SQL database management, cloud infrastructure, Active Directory, virtualization, and cybersecurity. Included hands-on internship component.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="cert-grid">
-      <div class="cert-card">
-        <div class="cert-name">Technical Support Engineer Certificate</div>
-        <div class="cert-org">Ensign College (CERT-SPEPO)</div>
-        <span class="cert-status status-done">Completed</span>
-      </div>
-      <div class="cert-card">
-        <div class="cert-name">IT Professional Certificate</div>
-        <div class="cert-org">Ensign College (CERTIFTPO)</div>
-        <span class="cert-status status-done">Completed</span>
-      </div>
-      <div class="cert-card">
-        <div class="cert-name">Certificate of System Administration</div>
-        <div class="cert-org">Ensign College (CERT-SYSPO)</div>
-        <span class="cert-status status-progress">In progress</span>
-      </div>
-      <div class="cert-card">
-        <div class="cert-name">AZ-104 Microsoft Azure Administrator</div>
-        <div class="cert-org">Microsoft</div>
-        <span class="cert-status status-prep">In preparation</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRINCIPLES -->
-<section id="principles">
-  <div class="container">
-    <p class="section-label">Spiritual progression portfolio</p>
-    <h2 class="section-title">Guiding principles</h2>
-    <div class="principles-list">
-
-      <div class="principle-card">
-        <div class="principle-title">Enduring power through covenant keeping and deep faith</div>
-        <div class="principle-verse">"He is like a man which built a house, and digged deep, and laid the foundation on a rock." — Luke 6:48</div>
-        <p>Lasting strength, whether spiritual or professional, comes only through deep and genuine rootedness rather than surface-level preparation. Elder Johnson's image of the empty vessel that catches fire because it has nothing inside to absorb what is directed at it captures the danger of shallow technical knowledge and shallow faith alike. The same channels that carry God's power into a disciple's life are opened through covenant keeping, diligent study, and genuine conversion. This principle shapes how I approach every certification, every system design, and every professional challenge: depth is not optional.</p>
-      </div>
-
-      <div class="principle-card">
-        <div class="principle-title">Co-creation with God through revelation and intentional planning</div>
-        <div class="principle-verse">"For I, the Lord God, created all things… spiritually, before they were naturally upon the face of the earth." — Moses 3:5</div>
-        <p>Effective work begins with spiritual creation before physical execution. This principle reshapes how I approach every infrastructure deployment, every business proposal, and every career decision. Beginning with the end in mind is not simply a productivity strategy; when grounded in faith it becomes an act of submission to God's superior knowledge of where I am going and what I am capable of becoming. Sister Johnson's invitation to let Christ author our stories reinforces this: yielding our professional narrative to the Master Author is the highest exercise of agency, not an abandonment of it.</p>
-      </div>
-
-      <div class="principle-card">
-        <div class="principle-title">Disciple-leadership as a moral and relational calling</div>
-        <div class="principle-verse">"That which is of God is light; and he that receiveth light, and continueth in God, receiveth more light." — D&C 50:24</div>
-        <p>Leadership in every domain is always a moral act with real consequences for real people. Elder Clark's framework of generating light and driving out darkness defines the standard I want to hold myself to in every IT role I occupy. As a systems administrator I will hold the security, reliability, and privacy of systems that people and organizations depend on. That is not a neutral technical responsibility. The three questions Elder Clark posed — what is my purpose, how can I lift those around me, how can I add value — are the questions I carry into every professional setting, every team interaction, and every ethical decision I face in this field.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- REFLECTION -->
-<section id="reflection">
-  <div class="container">
-    <p class="section-label">Reflective journal</p>
-    <h2 class="section-title">Faith and technology: observations on the interplay</h2>
-    <div class="reflection-card">
-      <p>During a recent period of quiet reflection, I found myself thinking about legacy in a way I had not anticipated. Watching Elder Stevenson speak about the Okinawa Japan Temple and the way temple ordinances connect families across generations, one question kept returning to me: what am I building, and will it outlast me? In my electrical maintenance work at Volta Aluminium, I maintain systems that keep a major production facility running. If I do my job well, those systems continue to function reliably long after my shift ends. In IT, the same principle operates at a larger scale. The infrastructure I design, the security policies I implement, and the documentation I write will shape the environments that future administrators inherit. The temple, as a place where eternal covenants are made and families are sealed across time, is the ultimate expression of building something that outlasts the present moment. That realization deepened my sense of professional purpose in a way I had not expected.</p>
-      <p>A second insight came from reflecting on the danger of taking blessings for granted. The same complacency that can creep into temple attendance can creep into the daily habits that sustain growth in any domain. As I approach the end of my degree, I am aware that the structured learning environment this course has provided will soon give way to the less structured rhythms of professional life. The discipline of spiritual and professional growth that IT 497 has cultivated must become self-sustaining after graduation. The integration of my spiritual and professional identities is not a project that ends with this course. It is the ongoing work of a disciple-leader who understands that systems, whether technical or spiritual, require active monitoring, regular maintenance, and a commitment to continuous improvement. That is the professional I am committed to becoming.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <p class="section-label">Get in touch</p>
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="contact-label">Email</div>
-        <div class="contact-value">samuellexicon@outlook.com</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">+233 204 476 085</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Tema, Greater Accra, Ghana</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-value">linkedin.com/in/samuel-adjetey-tetteh-a69163322</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>Samuel Adjetey Tetteh · Systems Administrator · Ensign College IT 497 Capstone Portfolio · 2026</p>
-</footer>
-
+  <footer>
+    Spiritual Progression &amp; Professional Growth Portfolio<br>
+    Built as a personal learning and reflection space.
+  </footer>
 </body>
 </html>
