@@ -1,248 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A personal portfolio exploring spiritual progression and professional growth.">
-  <title>Spiritual Progression &amp; Professional Growth</title>
-  <style>
-    :root {
-      --navy: #18324b;
-      --blue: #315b78;
-      --gold: #c69b53;
-      --cream: #f7f5f0;
-      --paper: #ffffff;
-      --ink: #263442;
-      --muted: #637282;
-      --line: #e4e8eb;
-      --shadow: 0 12px 34px rgba(24, 50, 75, .08);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; background: var(--cream); color: var(--ink);
-      font: 16px/1.75 Georgia, "Times New Roman", serif;
-    }
-    a { color: var(--blue); }
-    .topbar {
-      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line); backdrop-filter: blur(10px);
-    }
-    .nav {
-      max-width: 1120px; margin: auto; padding: 12px 22px;
-      display: flex; align-items: center; justify-content: space-between; gap: 18px;
-    }
-    .brand { color: var(--navy); font: 700 14px/1.3 Arial, sans-serif; letter-spacing: .04em; }
-    .navlinks { display: flex; flex-wrap: wrap; gap: 16px; }
-    .navlinks a {
-      color: var(--muted); text-decoration: none; font: 600 12px Arial, sans-serif;
-    }
-    .navlinks a:hover { color: var(--blue); }
-    .hero {
-      background: linear-gradient(130deg, #17334c, #315b78);
-      color: white; padding: 82px 22px 76px;
-    }
-    .hero-inner { max-width: 920px; margin: auto; }
-    .eyebrow {
-      color: #e5c58e; text-transform: uppercase; letter-spacing: .16em;
-      font: 700 11px Arial, sans-serif;
-    }
-    h1 {
-      max-width: 780px; margin: 18px 0; font: 400 clamp(36px, 6vw, 62px)/1.12 Georgia, serif;
-    }
-    .hero p { max-width: 690px; color: #e8eef3; font-size: 18px; }
-    .hero .button {
-      display: inline-block; margin-top: 18px; padding: 11px 18px;
-      border: 1px solid #e5c58e; border-radius: 3px; color: white;
-      text-decoration: none; font: 700 12px Arial, sans-serif;
-    }
-    main { max-width: 1000px; margin: 0 auto; padding: 48px 22px 80px; }
-    section { scroll-margin-top: 82px; margin: 0 0 34px; }
-    .panel {
-      background: var(--paper); border: 1px solid var(--line); border-radius: 8px;
-      padding: clamp(22px, 4vw, 38px); box-shadow: var(--shadow);
-    }
-    .section-label {
-      color: var(--gold); text-transform: uppercase; letter-spacing: .14em;
-      font: 700 11px Arial, sans-serif;
-    }
-    h2 { color: var(--navy); font: 400 clamp(27px, 4vw, 36px)/1.2 Georgia, serif; margin: 8px 0 18px; }
-    h3 { color: var(--navy); font: 700 21px/1.35 Georgia, serif; margin: 0 0 12px; }
-    p { margin: 0 0 15px; }
-    .principle {
-      border-top: 1px solid var(--line); padding: 25px 0 8px; margin-top: 22px;
-    }
-    .principle:first-of-type { border-top: 0; padding-top: 5px; }
-    .scripture {
-      margin: 18px 0 6px; padding: 15px 18px; border-left: 3px solid var(--gold);
-      background: #faf8f3; color: #465564;
-    }
-    .scripture strong { color: var(--navy); }
-    .resource-list { display: grid; gap: 14px; }
-    .resource {
-      border: 1px solid var(--line); border-radius: 6px; padding: 17px 18px;
-      background: #fff;
-    }
-    .resource h3 { font-size: 18px; margin-bottom: 5px; }
-    .tag {
-      display: inline-block; margin: 5px 6px 5px 0; padding: 3px 8px;
-      border-radius: 20px; background: #eef3f6; color: #38566e;
-      font: 700 10px Arial, sans-serif;
-    }
-    .resource a { font: 600 13px Arial, sans-serif; text-decoration-thickness: 1px; }
-    .reflection-note {
-      background: #faf8f3; border: 1px solid #eee5d6; padding: 15px 18px;
-      border-radius: 5px; color: #5b6269; font-size: 14px;
-    }
-    footer {
-      text-align: center; padding: 28px 20px; color: var(--muted);
-      border-top: 1px solid var(--line); font: 12px/1.6 Arial, sans-serif;
-    }
-    @media (max-width: 650px) {
-      .nav { align-items: flex-start; flex-direction: column; }
-      .navlinks { gap: 10px 14px; }
-      .hero { padding: 58px 22px; }
-    }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <nav class="nav" aria-label="Main navigation">
-      <div class="brand">MY GROWTH PORTFOLIO</div>
-      <div class="navlinks">
-        <a href="#about">ABOUT</a>
-        <a href="#principles">PRINCIPLES</a>
-        <a href="#resources">RESOURCES</a>
-        <a href="#reflection">REFLECTION</a>
-        <a href="#commitment">COMMITMENT</a>
-      </div>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Faith • Learning • Service</div>
-      <h1>Spiritual Progression &amp; Professional Growth</h1>
-      <p>A personal space to reflect on the values that guide me, the lessons I am learning, and the kind of person and professional I hope to become.</p>
-      <a class="button" href="#principles">EXPLORE MY GUIDING PRINCIPLES</a>
-    </div>
-  </div>
-
-  <main>
-    <section id="about" class="panel">
-      <div class="section-label">A little about my journey</div>
-      <h2>Growing in faith and in my work</h2>
-      <p>As I continue my education and work toward my professional goals, I have come to understand that personal growth is about more than gaining knowledge, earning qualifications, or finding a good job. It is also about becoming a better person, strengthening my relationship with Heavenly Father, and learning how to use my abilities to help others.</p>
-      <p>My journey has not always followed a straight path. Moving from electrical maintenance into Information Technology has required me to learn new things, adjust to challenges, and remain committed to my goals. Through these experiences, I have learned the importance of patience, hard work, faith, and continuous learning.</p>
-      <p>As I develop this portfolio, I want to show how my spiritual beliefs and professional ambitions can work together. The three principles below are reminders of the direction I want my life to take.</p>
-    </section>
-
-    <section id="principles" class="panel">
-      <div class="section-label">The foundation</div>
-      <h2>My three guiding principles</h2>
-
-      <article class="principle">
-        <h3>1. Keeping Jesus Christ at the Center of My Life</h3>
-        <p>One of the most important things I want to remember as I move forward in life is to keep Jesus Christ at the center of everything I do. It is easy to become so focused on education, work, financial responsibilities, and future plans that I sometimes forget to make time for the things that matter most spiritually.</p>
-        <p>I want to develop the habit of turning to Heavenly Father for guidance, especially when making important decisions or facing difficult situations. I believe that having faith in Jesus Christ can help me remain strong, make better choices, and find peace even when things do not go as planned.</p>
-        <p>This principle also influences the kind of professional I want to become. As I continue developing my skills in Information Technology and System Administration, I want to remember that being successful is not just about technical knowledge. It is also about being honest, humble, dependable, and respectful toward others. I want people to know that they can trust me and rely on me to do what is right.</p>
-        <div class="scripture"><strong>Scripture: 3 Nephi 13:19–22.</strong> This passage reminds me to focus on what has lasting value instead of becoming too attached to temporary things. I understand it as a reminder to keep my priorities in the right order and make sure that my ambitions do not take the place of my relationship with God.</div>
-      </article>
-
-      <article class="principle">
-        <h3>2. Lifelong Learning, Personal Growth, and Diligence</h3>
-        <p>My second guiding principle is to never stop learning or working toward becoming a better version of myself. One thing life has taught me is that growth takes time. There will always be new things to learn, challenges to overcome, and opportunities to improve.</p>
-        <p>My educational journey has helped me appreciate this principle. Moving from electrical maintenance into Information Technology has pushed me outside my comfort zone. I have had to develop new knowledge, understand unfamiliar technologies, and become more confident in my abilities.</p>
-        <p>Through my studies at Ensign College and BYU-Pathway Worldwide, I have continued building my knowledge in technical support, networking, and system administration. These experiences have taught me that progress comes through consistency, patience, and a willingness to learn from mistakes.</p>
-        <p>I also believe that learning should not stop after graduation. Technology continues to change, and I will need to keep developing my skills throughout my career. More importantly, I want to continue learning spiritually and become someone who is willing to accept correction, grow through experience, and follow the direction of the Lord.</p>
-        <div class="scripture"><strong>Scripture: Doctrine and Covenants 58:27.</strong> This scripture encourages us to be actively involved in doing good rather than waiting for everything to happen on its own. It reminds me to take responsibility for my growth, make good use of my opportunities, and put effort into the goals I want to achieve.</div>
-      </article>
-
-      <article class="principle">
-        <h3>3. Serving Others Through Integrity, Resilience, and Christlike Love</h3>
-        <p>My third guiding principle is to use what I learn and the abilities I develop to make a positive difference in the lives of others.</p>
-        <p>I believe that life is not only about what I achieve for myself but also about how I treat people and the contributions I make. Whether at home, in the workplace, at school, or in the community, I want to be someone who is willing to help, listen, and treat others with kindness and respect.</p>
-        <p>This principle is especially important in my chosen career. Working in Information Technology involves more than maintaining computers, configuring networks, or managing systems. Behind every technical issue is a person or an organization depending on those systems to work properly.</p>
-        <p>As I prepare for a career in IT and System Administration, I want to approach my responsibilities with honesty, patience, and a willingness to help. I know that challenges and mistakes are part of professional life, but I want to learn from them instead of giving up. I also want to remain calm under pressure and treat colleagues and users with respect, even when situations become difficult.</p>
-        <p>My faith reminds me that serving others is one way of showing love for God. I want my professional knowledge to become a tool that allows me to help people and contribute positively wherever I work.</p>
-        <div class="scripture"><strong>Scripture: Mosiah 2:17.</strong> This scripture teaches that serving other people is also a way of serving God. It reminds me that even simple acts of kindness, support, and service can have lasting meaning.</div>
-      </article>
-    </section>
-
-    <section id="resources" class="panel">
-      <div class="section-label">Study and inspiration</div>
-      <h2>My initial collection of supporting materials</h2>
-      <p>These scriptures and Church resources give me ideas to study further and help me connect my guiding principles with teachings about discipleship, growth, and service.</p>
-      <div class="resource-list">
-        <article class="resource">
-          <h3>1. 3 Nephi 13:19–22</h3>
-          <span class="tag">Christ at the Center</span>
-          <p>This passage teaches me to focus on eternal priorities and not allow temporary achievements or possessions to become more important than my relationship with God.</p>
-          <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/13?lang=eng&amp;id=19-22#p19" target="_blank" rel="noopener">Read the scripture</a>
-        </article>
-        <article class="resource">
-          <h3>2. “Gather Together in One All Things in Christ” — Elder David A. Bednar</h3>
-          <span class="tag">All three principles</span>
-          <p>Elder Bednar's message and the analogy of intertwined strands help me think about how my faith, education, career, relationships, and responsibilities can strengthen one another when centered on Jesus Christ.</p>
-          <a href="https://www.churchofjesuschrist.org/study/general-conference/2018/10/gather-together-in-one-all-things-in-christ" target="_blank" rel="noopener">Read the General Conference talk</a>
-        </article>
-        <article class="resource">
-          <h3>3. Jesus Christ: The Prince of Peace</h3>
-          <span class="tag">Christ at the Center</span>
-          <p>This video reminds me that Jesus Christ can bring peace and comfort during difficult times. I want to remember that I do not have to face challenges without faith and spiritual guidance.</p>
-          <a href="https://youtu.be/5QHClYjiCF8" target="_blank" rel="noopener">Watch the video</a>
-        </article>
-        <article class="resource">
-          <h3>4. Blessings of the Temple</h3>
-          <span class="tag">Christ at the Center</span>
-          <p>This video encourages me to appreciate the temple and the blessings that come from making time for spiritual things, even when life becomes busy.</p>
-          <a href="https://youtu.be/3e8mbYvspqo" target="_blank" rel="noopener">Watch the video</a>
-        </article>
-        <article class="resource">
-          <h3>5. Don't Take the Temple for Granted</h3>
-          <span class="tag">Christ at the Center</span><span class="tag">Personal Growth</span>
-          <p>This video reminds me not to take spiritual opportunities and blessings for granted. It encourages me to be more intentional about my spiritual growth.</p>
-          <a href="https://youtu.be/zaD1FGeEsM4" target="_blank" rel="noopener">Watch the video</a>
-        </article>
-        <article class="resource">
-          <h3>6. Doctrine and Covenants 58:27</h3>
-          <span class="tag">Lifelong Learning</span>
-          <p>This scripture reminds me that personal growth requires action. I need to make consistent efforts and take responsibility for my progress.</p>
-          <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/58?lang=eng&amp;id=27#p27" target="_blank" rel="noopener">Read the scripture</a>
-        </article>
-        <article class="resource">
-          <h3>7. Mosiah 2:17</h3>
-          <span class="tag">Service and Christlike Love</span>
-          <p>This scripture reminds me that serving others is an important part of following Jesus Christ. It encourages me to look beyond my personal goals and consider how I can help others.</p>
-          <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&amp;id=17#p17" target="_blank" rel="noopener">Read the scripture</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="reflection" class="panel">
-      <div class="section-label">Personal reflection</div>
-      <h2>Connecting spiritual progression with professional growth</h2>
-      <p>As I took time to reflect on my life and the direction I want to take, I thought about the experiences that have brought me to where I am today. I considered my education, work experiences, personal challenges, and the importance of keeping my faith strong while working toward my goals. One thing that stood out to me is that it is possible to become so focused on achieving something that we forget to appreciate the journey and the lessons we are learning along the way.</p>
-      <p>I also thought about the importance of making time for spiritual things, even when life becomes busy. Between education, work, and planning for the future, there are many responsibilities that compete for my attention. However, I want to be more intentional about my relationship with Heavenly Father and remember to seek His guidance in the decisions I make.</p>
-      <p>One message that particularly caught my attention was Elder David A. Bednar's analogy of the intertwined strands of a rope. It helped me understand that my spiritual and professional lives do not have to compete with each other. They can work together to make me stronger. My education can develop my knowledge, my work experiences can teach me responsibility, and my faith can help guide the way I use what I learn.</p>
-      <p>When I think about my transition from electrical maintenance into Information Technology, I recognize how much patience, effort, and willingness to learn have been required. There have been unfamiliar concepts and challenges, but each experience has provided an opportunity to grow. I want to carry these lessons into my future career, particularly as I develop in system administration and other areas of IT.</p>
-      <p>Professionally, I want to be more than someone who knows how to solve technical problems. I want to be someone who is dependable, honest, willing to help, and respectful toward others. I believe that the values I develop through my faith can make me a better colleague and a more responsible professional.</p>
-      <p>Overall, this reflection has reminded me that success is not only about earning qualifications or reaching career goals. It is also about the person I become along the way. Moving forward, I want to continue strengthening my faith, being committed to lifelong learning, and finding meaningful ways to serve others. My goal is to build a life in which my spiritual values and professional ambitions support one another, with Jesus Christ remaining at the center.</p>
-      <div class="reflection-note"><strong>Personalize this section before submitting:</strong> Add a few true details from the quiet reflection activity you complete, such as a thought from your scripture study, something you noticed about your priorities, or a feeling of peace. Do not include private or sacred details you do not wish to share.</div>
-    </section>
-
-    <section id="commitment" class="panel">
-      <div class="section-label">Looking ahead</div>
-      <h2>My commitment moving forward</h2>
-      <p>As I continue developing this portfolio, I want to use these three guiding principles as reminders of the direction I want my life to take.</p>
-      <p>I will strive to keep Jesus Christ at the center of my decisions, remain committed to learning and personal improvement, and use my abilities to serve others with honesty and compassion.</p>
-      <p>I know I still have much to learn, both spiritually and professionally. However, I believe that by staying focused, putting in consistent effort, and seeking the Lord's guidance, I can continue making progress and become the person I want to be.</p>
-    </section>
-  </main>
-
-  <footer>
-    Spiritual Progression &amp; Professional Growth Portfolio<br>
-    Built as a personal learning and reflection space.
-  </footer>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A personal portfolio connecting spiritual progression with professional growth.">
+<title>Spiritual Progression &amp; Professional Growth</title>
+<style>
+:root{--navy:#18324b;--blue:#315b78;--gold:#c69b53;--cream:#f7f5f0;--ink:#263442;--muted:#637282;--line:#e4e8eb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.75 Georgia,"Times New Roman",serif}a{color:var(--blue)}
+.topbar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}.nav{max-width:1120px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{color:var(--navy);font:700 14px Arial,sans-serif;letter-spacing:.04em}.navlinks{display:flex;flex-wrap:wrap;gap:16px}.navlinks a{color:var(--muted);text-decoration:none;font:600 12px Arial,sans-serif}
+.hero{background:linear-gradient(130deg,#17334c,#315b78);color:white;padding:82px 22px 76px}.hero-inner{max-width:920px;margin:auto}.eyebrow,.section-label{text-transform:uppercase;letter-spacing:.15em;font:700 11px Arial,sans-serif}.eyebrow{color:#e5c58e}
+h1{max-width:780px;margin:18px 0;font:400 clamp(36px,6vw,62px)/1.12 Georgia,serif}.hero p{max-width:690px;color:#e8eef3;font-size:18px}.button{display:inline-block;margin-top:18px;padding:11px 18px;border:1px solid #e5c58e;border-radius:3px;color:white;text-decoration:none;font:700 12px Arial,sans-serif}
+main{max-width:1000px;margin:auto;padding:48px 22px 80px}section{scroll-margin-top:82px;margin:0 0 34px}.panel{background:white;border:1px solid var(--line);border-radius:8px;padding:clamp(22px,4vw,38px);box-shadow:0 12px 34px rgba(24,50,75,.08)}
+.section-label{color:var(--gold)}h2{color:var(--navy);font:400 clamp(27px,4vw,36px)/1.2 Georgia,serif;margin:8px 0 18px}h3{color:var(--navy);font:700 21px/1.35 Georgia,serif;margin:0 0 12px}p{margin:0 0 15px}
+.principle{border-top:1px solid var(--line);padding:25px 0 8px;margin-top:22px}.principle:first-of-type{border-top:0;padding-top:5px}.materials{background:#faf8f3;border-left:3px solid var(--gold);padding:15px 18px;margin:18px 0 6px}.materials ul{margin:8px 0 0;padding-left:22px}.materials li{margin:5px 0}
+footer{text-align:center;padding:28px 20px;color:var(--muted);border-top:1px solid var(--line);font:12px/1.6 Arial,sans-serif}
+@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px 14px}.hero{padding:58px 22px}}
+</style></head><body>
+<header class="topbar"><nav class="nav" aria-label="Main navigation"><div class="brand">MY GROWTH PORTFOLIO</div><div class="navlinks"><a href="#about">ABOUT</a><a href="#principles">PRINCIPLES</a><a href="#reflection">REFLECTION</a><a href="#commitment">COMMITMENT</a></div></nav></header>
+<div class="hero"><div class="hero-inner"><div class="eyebrow">Faith • Learning • Service</div><h1>Spiritual Progression &amp; Professional Growth</h1><p>A personal space to reflect on the values that guide me, the lessons I am learning, and the kind of person and professional I hope to become.</p><a class="button" href="#principles">EXPLORE MY GUIDING PRINCIPLES</a></div></div>
+<main>
+<section id="about" class="panel"><div class="section-label">A little about my journey</div><h2>Growing in faith and in my work</h2>
+<p>As I continue my education and work toward my professional goals, I have come to understand that personal growth is about more than gaining knowledge, earning qualifications, or finding a good job. It is also about becoming a better person, strengthening my relationship with Heavenly Father, and learning how to use my abilities to help others.</p>
+<p>My journey from electrical maintenance into Information Technology has required me to learn new things, adjust to challenges, and remain committed to my goals. Through these experiences, I have learned the importance of patience, hard work, faith, and continuous learning.</p>
+<p>This portfolio brings together the spiritual values I want to live by and the professional responsibilities I hope to carry with integrity.</p></section>
+<section id="principles" class="panel"><div class="section-label">The foundation</div><h2>My three finalized guiding principles</h2><article class="principle"><h3>1. Keeping Jesus Christ at the Center</h3><p>The first principle guiding my spiritual and professional portfolio is the conviction that Jesus Christ must remain at the center of every decision, ambition, and responsibility I carry. It is easy to become so consumed by education, work, and planning for the future that the most important things are gradually displaced by the most urgent ones. I want to develop and maintain the habit of turning to Heavenly Father for guidance, especially when facing difficult decisions or unexpected challenges, and to remember that being a successful IT professional is not only about technical knowledge. It is also about being honest, humble, dependable, and trustworthy. The kind of professional I want to become is one whose colleagues and clients know they can rely on him to do what is right, not just what is efficient or convenient.</p><p>This principle is grounded in the Savior’s teaching in 3 Nephi 13:19–22, which calls us to focus on what has lasting value rather than becoming too attached to temporary achievements or possessions. I understand this passage as a direct call to keep my priorities in the right order and ensure that my professional ambitions never take the place of my relationship with God. The video on Jesus Christ as the Prince of Peace reinforced this by reminding me that He can bring genuine peace and stability during difficult seasons, and that I do not have to face professional or personal challenges without spiritual grounding and divine guidance.</p><div class="materials"><strong>Materials compiled</strong><ul><li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/13?lang=eng&amp;id=19-22#p19" target="_blank" rel="noopener">3 Nephi 13:19–22</a></li><li><a href="https://youtu.be/5QHClYjiCF8" target="_blank" rel="noopener">Jesus Christ: The Prince of Peace (video)</a></li><li><a href="https://youtu.be/3e8mbYvspqo" target="_blank" rel="noopener">Blessings of the Temple (video)</a></li><li><a href="https://youtu.be/zaD1FGeEsM4" target="_blank" rel="noopener">Don’t Take the Temple for Granted (video)</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2018/10/gather-together-in-one-all-things-in-christ" target="_blank" rel="noopener">Elder David A. Bednar, “Gather Together in One All Things in Christ” (November 2018)</a></li></ul></div></article><article class="principle"><h3>2. Lifelong Learning, Personal Growth, and Diligence</h3><p>My second guiding principle is to never stop learning or working toward becoming a better version of myself, spiritually and professionally. Growth takes time, and there will always be new things to learn, challenges to overcome, and opportunities to improve. My educational journey has reinforced this conviction in a personal way. The transition from electrical maintenance into Information Technology pushed me well outside my comfort zone. I had to develop entirely new knowledge, build confidence in unfamiliar technologies, and trust that consistent effort over time would produce competence. It did, but only because I did not wait for circumstances to be ideal before beginning.</p><p>I also believe that learning cannot stop after graduation. Technology continues to evolve, and I will need to keep developing my skills throughout my career. More importantly, I want to continue learning spiritually, to become someone who accepts correction with humility, grows through experience, and follows the direction of the Lord in every phase of life. Doctrine and Covenants 58:27 captures this principle precisely by calling us to be anxiously engaged rather than passive, taking responsibility for our growth rather than waiting for it to happen to us.</p><div class="materials"><strong>Materials compiled</strong><ul><li><a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/58?lang=eng&amp;id=27#p27" target="_blank" rel="noopener">Doctrine and Covenants 58:27</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2018/10/gather-together-in-one-all-things-in-christ" target="_blank" rel="noopener">Elder Bednar, “Gather Together in One All Things in Christ” — intertwined strands analogy</a></li><li>Personal experience: transitioning from electrical maintenance into IT at Ensign College</li><li><a href="https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&amp;id=5-6#p5" target="_blank" rel="noopener">Proverbs 3:5–6</a></li></ul></div></article><article class="principle"><h3>3. Serving Others through Integrity, Resilience, and Christlike Love</h3><p>My third guiding principle is to use what I learn and the abilities I develop to make a positive difference in the lives of others. Life is not only about what I achieve for myself but about how I treat people and the contributions I make. Whether at home, in the workplace, at school, or in the community, I want to be someone who is willing to help, who listens carefully, and who treats others with consistent kindness and respect. This principle is especially important in my chosen career. Working in IT involves more than maintaining servers, configuring networks, or managing cloud infrastructure. Behind every technical issue is a person or an organization depending on those systems to work properly. I want to approach every professional responsibility with honesty, patience, and a genuine willingness to help.</p><p>Mosiah 2:17 teaches that serving other people is also a way of serving God, and that even simple acts of support and service carry lasting meaning. That scripture has become a professional compass for me. When I am deciding how to respond to a difficult client situation, how to handle a security incident that affects real people’s data, or how to treat a colleague who is struggling, the question I want to ask is not what is most efficient but what does service look like here. My faith is not separate from my professional identity. It is the foundation it rests on.</p><div class="materials"><strong>Materials compiled</strong><ul><li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&amp;id=17#p17" target="_blank" rel="noopener">Mosiah 2:17</a></li><li>Elder Clark, “Becoming a Disciple-Leader” (Ensign College Devotional, November 2020)</li><li>Personal experience at Pasovent: serving clients under pressure and understanding IT as a service discipline</li><li><a href="https://www.churchofjesuschrist.org/study/scriptures/nt/matt/5?lang=eng&amp;id=14-16#p14" target="_blank" rel="noopener">Matthew 5:14–16</a></li></ul></div></article></section>
+<section id="reflection" class="panel"><div class="section-label">Personal reflection</div><h2>Notes and insights from my reflection activity</h2><p>During my reflection activity, the thought that stood out most clearly to me was this: I have been building longer than I realized. When I looked honestly at the journey from electrical maintenance at Volta Aluminium to IT systems administration, I did not see a career change. I saw a single continuous thread of learning to maintain systems that people depend on. The motors and switchgear I have maintained for over a decade and the cloud infrastructure and Linux servers I am now learning to build are different technologies, but they require the same foundational qualities: precision, accountability, patience under pressure, and the humility to keep learning. That realization brought a quiet sense of peace that I did not expect. I also thought about how easy it is to become so focused on achieving a goal that we forget to appreciate the journey and the lessons being learned along the way. Between education, work, and planning for the future, there are many responsibilities competing for attention, and I want to be more intentional about making time for spiritual things and seeking Heavenly Father’s guidance in the decisions I make.</p><p>Spiritually, what developed most during this reflection was my understanding of Elder Bednar’s intertwined strands analogy. I had understood it intellectually before, but sitting quietly with it this time I felt it more personally. My faith has not been separate from my professional journey. It has been woven through it. The discipline of prayer that helped me stay grounded during difficult coursework, the covenant-keeping that kept me honest when shortcuts were available, and the service orientation that shaped how I treated clients during my internship at Pasovent were not additions to my professional development. They were part of its structure. Remove any one of those strands and the rope would have been weaker. Going into my IT career, I intend to carry this integrated identity deliberately. I want to be a systems administrator whose technical competence is inseparable from his integrity, and whose first question in any professional role is not what can I accomplish but how can I serve the people depending on these systems. The temple videos reminded me that the blessings available through covenants are real and present, not distant or theoretical, and that I cannot take for granted the spiritual habits that have made this season of growth possible. That is the confidence and the commitment I want to bring into every professional environment I enter.</p></section>
+<section id="commitment" class="panel"><div class="section-label">Looking ahead</div><h2>My commitment moving forward</h2>
+<p>I want to keep Jesus Christ at the center of my decisions, remain committed to learning and personal improvement, and use my abilities to serve others with honesty and compassion.</p>
+<p>I know I still have much to learn, both spiritually and professionally. I intend to carry the lessons from my past experience into my future in IT, remembering that technical competence matters most when it is joined with integrity and a sincere desire to serve.</p></section>
+</main><footer>Spiritual Progression &amp; Professional Growth Portfolio<br>Faith • Learning • Service</footer></body></html>
